@@ -188,3 +188,11 @@ You can personalize by dotfiles mechanism as you like it.
 - Terraform - Azure Provider : https://www.terraform.io/docs/providers/azurerm/index.html
 - [Terraform - Azure Provider - GitHub Repos](https://github.com/terraform-providers/terraform-provider-azurerm)
 - [Terraform - Azure Provider - GitHub Repos - Examples](https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples)
+
+## 個人的なメモ
+terraformに関する必要な開発環境がここには入っている。
+拡張先としては、例えばterraformの静的テスト確認が(コマンドはあるので)簡単に確認する方法とか
+そのあたりだろうか。
+
+これをJava+Quarkus環境に応用しようとしたら何が必要なのだろう。
+mavenキャッシュに関する問題はDockerをコマンドラインの実行用ツールとしてのみ使えばキャッシュ先はローカルになるのか？
