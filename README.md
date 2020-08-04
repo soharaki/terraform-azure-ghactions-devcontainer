@@ -1,9 +1,12 @@
-# devcontainer for Terraform and Azure
-You can get started the following things instantly after fork and git clone. The [VS Code Remote Development (Remote - Containers)](https://code.visualstudio.com/docs/remote/containers) enables us to do these with few installation.
+# Terraform and AzureをVS Codeのコンテナ開発環境で開発できる優れものや
 
-- Manage Azure by Terraform 
-  - `terraform` and Azure CLI `az` command are already installed on Docker container
-- Run it on GitHub Actions
+この環境をフォークしてgit cloneしたらすぐ始めよっか. 
+ちょいちょいいじったらThe [VS Code Remote Development (Remote - Containers)](https://code.visualstudio.com/docs/remote/containers)はすぐ使えるよーなるで.
+
+- こんなことできるようになるよ!!
+  - TerraformによるAzure管理 
+    - `terraformとAzureCliツールはすでにdevcontainerの中にあるから安心しいや`
+  - GitHub Actionsによる自動実行
 
 # Get started
 
