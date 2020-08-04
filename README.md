@@ -1,6 +1,6 @@
 # Terraform and AzureをVS Codeのコンテナ開発環境で開発できる優れものや
 
-この環境をフォークしてgit cloneしたらすぐ始めよっか. 
+この環境をフォークしてgit cloneしたらすぐ始めよっか.   
 ちょいちょいいじったらThe [VS Code Remote Development (Remote - Containers)](https://code.visualstudio.com/docs/remote/containers)はすぐ使えるよーなるで.
 
 - こんなことできるようになるよ!!
@@ -8,17 +8,17 @@
     - `terraformとAzureCliツールはすでにdevcontainerの中にあるから安心しいや`
   - GitHub Actionsによる自動実行
 
-# Get started
+# 始め方
 
-## Requirement
+## 必要なもの
 
-Prepare the followings, 
+下記のツールを準備したってや
 
 1. Visual Studio Code : https://code.visualstudio.com/download
 1. VS Code Extension : [VS Code Remote Development (Remote - Containers)](https://code.visualstudio.com/docs/remote/containers)
 1. Docker Desktop (in any OS) : https://www.docker.com/get-started
 
-That's all!
+これが全てや!
 
 ## Let's get started
 1. Confirm that the Docker Desktop is running.
