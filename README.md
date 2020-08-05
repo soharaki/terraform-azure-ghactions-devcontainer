@@ -1,7 +1,7 @@
 # Terraform and AzureをVS Codeのコンテナ開発環境で開発できる優れものや
 
-この環境をフォークしてgit cloneしたらすぐ始めよっか.   
-ちょいちょいいじったらThe [VS Code Remote Development (Remote - Containers)](https://code.visualstudio.com/docs/remote/containers)はすぐ使えるよーなるで.
+この環境をフォークしてgit cloneしたらすぐ始めよっか。   
+ちょいちょいいじったらThe [VS Code Remote Development (Remote - Containers)](https://code.visualstudio.com/docs/remote/containers)はすぐ使えるよーなるで。
 
 - こんなことできるようになるよ!!
   - TerraformによるAzure管理 
@@ -20,18 +20,27 @@
 
 これが全てや!
 
-## Let's get started
-1. Confirm that the Docker Desktop is running.
-1. Fork this repository on GitHub (recommend fork to to your private repository just to avoid something like a key leakage).
-1. Git clone to your local.
+## ほな始めよっか
+1. Docker Desktopが動いていることを確認してな
+1. GitHubのリポジトリをフォークしてな 
+   (AzureServicePrincipalの鍵とか重要なものをぎょーさん扱うさかい、プライベートリポジトリにすることをお勧めするで).
+1. ローカル環境にcloneしてや
     ```sh
     git clone <your repository>
     ```
-1. Open VS code on your repository directory, and click Remote Development icon at the bottom left. (Or, you can open the following step from Command Palette as well)  
+1. クローンしたリポジトリフォルダをVs codeで開いて、左下のRemote Developmentアイコンをクリックや(あるいはコマンドラインから同じこともできるでー)  
     ![VS Code Remote Development](docs/images/launch-vscode-remotecontainer-01.png)
-1. Select `Remote-Containers: Reopen in Containers...` on the launched menu  
+    ```cmd
+    REM Windowsだといつも俺はこうやるで
+    REM 1. クローンしたリポジトリフォルダをExplorerで普通に開く
+    REM 2. 上のフォルダパスの入力欄にcmdと打ち込んでコマンドプロンプトを開く
+    REM 3. 下記の通りコマンドを打ち込むんじゃー。最後の.忘れんといてな
+    REM 3. `C:\Users\soharaki\SomeRepository>code -r .`
+    ```
+    
+1. 起動したメニュー欄から `Remote-Containers: Reopen in Containers...` を選択する
     ![Reopen in containers](docs/images/vscode-remote-menu-reopenincontainer.png)
-1. Open terminal in VS Code and try...  
+1. VS Codeのターミナルを開いてlets tryや!  
     ```sh
     $ terraform -v
     Terraform v0.12.29
@@ -40,9 +49,10 @@
     azure-cli                          2.9.1
     ...
     ```
-    Yes! You are ready to go!
+    ほな、できたやろ？
 
-    FYI: Also `tflint` and `terragrunt` are installed. See also the [Dockerfile](.devcontainer/Dockerfile) for the detail.
+    FYI: terraformの構文チェックを行う `tflint` やビルドを良い感じにしてくれる `terragrunt` もインストールしとるで。  
+    詳しいことは [Dockerfile](.devcontainer/Dockerfile) を参照な。
 
 # Go for Azure
 
