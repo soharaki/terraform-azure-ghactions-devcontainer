@@ -21,7 +21,7 @@
 
 これが全てや!
 
-## ほな始めよっか
+## ほな、始めよっか
 1. Docker Desktopが動いていることを確認してな
 1. GitHubのリポジトリをフォークしてな 
    (AzureServicePrincipalの鍵とか重要なものをぎょーさん扱うさかい、プライベートリポジトリにすることをお勧めするで).
@@ -50,28 +50,30 @@
     azure-cli                          2.9.1
     ...
     ```
-    ほな、できたやろ？
+    
+    ドヤァ
 
     FYI: terraformの構文チェックを行う `tflint` やビルドを良い感じにしてくれる `terragrunt` もインストールしとるで。  
     詳しいことは [Dockerfile](.devcontainer/Dockerfile) を参照な。
 
-# Go for Azure
+# 実践編
 
 ## Terraform backends on Azure Storage
-First, let's get start from the creating the [Terraform backends on Azure Storage](https://www.terraform.io/docs/backends/types/azurerm.html).
+手始めに [Terraform backends on Azure Storage](https://www.terraform.io/docs/backends/types/azurerm.html)を作ってみよっか
 
-1. Open the VS code terminal. You are now in repository home.
+1. ターミナルを開いてや。いまあんたはリポジトリのディレクトリの直下におるはずや
     ```sh
     $ pwd
     /workspace/<your repository name>
     ```
-1. Login to Azure. You will be ask to open the login page and enter the given code (the part `************` in below).
+1. Azureにログインしましょ. ログインページを開いて次の通り入力してや (the part `************` in below).
     ```sh
     $ az login
     To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code ************ to authenticate.
     ```
-    If login succeeded, you will see the Azure subscription list in JSON format.
-1. Select the appropriate subscription and run this with GUID on `id` property.
+    もしもログインに成功したら, JSONの形でAzureのサブスクリプション一覧が出るで。
+
+1. 適切なサブスクリプションを選んで、`id` プロパティに GUID を指定して実行じゃ
     ```sh
     $ az account set --subscription <your subscription GUID>
     ```
@@ -97,7 +99,9 @@ First, let's get start from the creating the [Terraform backends on Azure Storag
     rerun this command to reinitialize your working directory. If you forget, other
     commands will detect it and remind you to do so if necessary.
    ```
-1. Run the `terraform plan`, and you will be asked the name of storage account. Try the one to be unique globally.
+1. `terraform plan`を実行や。その際にストレージアカウントの名前を聞かれるで。   
+　　世界でオンリーワンの名前を準備してトライな。
+
     ```sh
     $ terraform plan
 
@@ -117,7 +121,9 @@ First, let's get start from the creating the [Terraform backends on Azure Storag
     ```
     Error: Error building AzureRM Client: Authenticating using the Azure CLI is only supported as a User (not a Service Principal).
     ```
-1. Run the `terraform apply`, and you will be asked the name of storage account again. Entry the same one.
+1. `terraform apply`を実行や。はたまたストレージアカウントの名前を聞かれるで。  
+   さっき入力した名前、それを使うんじゃ。
+
     ```sh
     $ terraform apply
 
@@ -154,7 +160,8 @@ First, let's get start from the creating the [Terraform backends on Azure Storag
     ```
     Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
     ```
-1. Check if the storage account is created.
+1. ストレージアカウントが作成されたかチェックやー
+
     ```sh
     $ az group show --name terraform-rg --out table
     (result)
@@ -163,19 +170,20 @@ First, let's get start from the creating the [Terraform backends on Azure Storag
     (result)
     ```
 
-# Go for GitHub Actions
+# GitHub Actions編
 
-(will be updated soon)
+(少し待っててな)
 
-# Customize
-You want to customize? Check these files. These are the tricks. See also the [VS Code document](https://code.visualstudio.com/docs/remote/containers) how to customize.
+# カスタマイズ編
+
+カスタマイズ? ほんならこれらのファイルを確認や。重要なことは全て書いてある。[VSコードドキュメント](https://code.visualstudio.com/docs/remote/containers)もみるとええで。
 
 - [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
 - [.devcontainer/Dockerfile](.devcontainer/Dockerfile)
 
-## Personalize by dotfiles
+## dotfilesによる自分専用の環境を作りたい
 
-You can personalize by dotfiles mechanism as you like it.
+ドットファイルの仕組みでお好きなように自分専用環境作れるでー。
 
 [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
 ```json
@@ -190,7 +198,7 @@ You can personalize by dotfiles mechanism as you like it.
 
 - [Personalizing with dotfile repositories](https://code.visualstudio.com/docs/remote/containers#_personalizing-with-dotfile-repositories)
 
-# Reference
+# 参考文献や
 
 ## VS Code docs
 
@@ -210,3 +218,6 @@ terraformに関する必要な開発環境がここには入っている。
 
 これをJava+Quarkus環境に応用しようとしたら何が必要なのだろう。
 mavenキャッシュに関する問題はDockerをコマンドラインの実行用ツールとしてのみ使えばキャッシュ先はローカルになるのか？
+
+大阪弁、また同僚にレビューしてもらわないとな...
+もういっそのこと厳格さが要求されないrunbookは全部口語体でいいのに。
