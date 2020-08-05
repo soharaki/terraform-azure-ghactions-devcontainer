@@ -7,6 +7,7 @@
   - TerraformによるAzure管理 
     - `terraformとAzureCliツールはすでにdevcontainerの中にあるから安心しいや`
   - GitHub Actionsによる自動実行
+    - `Azureは一度作ったら終わりじゃない。繰り返し繰り返し壊して作りなおすのじゃ`
 
 # 始め方
 
